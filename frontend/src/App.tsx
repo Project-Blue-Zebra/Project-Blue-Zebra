@@ -4,6 +4,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 import Home from "./Home/Home";
 import Products from "./Products/Products";
+import Orders from './Orders/Orders';
+import OrderDetail from './Orders/OrderDetail';
 
 function app() {
   const openMenu = () => {
@@ -31,6 +33,7 @@ function app() {
             <div className="header-links">
                 <Link to="/">Home</Link>
                 <Link to="/catalog">Catalog</Link>
+                <Link to="/orders">Orders</Link>
             </div>
         </header>
         <aside className="sidebar">
@@ -50,6 +53,8 @@ function app() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/catalog" element={<Products />} />
+                <Route path="orders" element={<Orders />}></Route>
+                <Route path="/order/:id" element={<OrderDetail />}></Route>
             </Routes>
         </main>
         <footer>
