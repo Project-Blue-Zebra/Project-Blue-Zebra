@@ -243,5 +243,6 @@ th{
 
 tbody > tr:nth-child(odd){
   background-color: #f0f0f0;
+  color: #f08000;
 }
 
