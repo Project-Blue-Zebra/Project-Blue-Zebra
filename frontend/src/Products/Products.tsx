@@ -1,35 +1,9 @@
-/*import data from "./data";*/
-import React, {useEffect, useState} from "react";
-import axios from "axios";
-type Product = {
-    id: number; 
-    name: string; 
-    description: string; 
-    brand: string;
-    price: number; 
-    rating: number;
-    numberOfReviews: number; 
-    imageUrl: string; 
-}
-const emptyProducts: Product[] = [];
-
+import data from "./data";
 function Products(){
-    const [products, setProducts]: [Product[], (products: Product[]) => void] = useState(emptyProducts);
-    useEffect(() => {
-        axios.get<Product[]>("http://127.0.0.1:5500/Blue.Zebra.Api/", 
-        {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-        .then((response) => setProducts(response.data))
-        .catch((error) => console.log(error));
-    },  [] );
-
     return(
         <div className="content">
             <ul className="products">
-                {products.map((Products) => (
+                {data.products.map((Products) => (
                     <li>
                         <div className="product">
                             <img
